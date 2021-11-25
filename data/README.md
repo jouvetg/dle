@@ -3,7 +3,7 @@
 
 1) To train the Deep-learning emulator, you need use a minimal dataset, which can downloaded with:
 
-	wget https://www.dropbox.com/s/9hnaqbkfrap7oir/cfsflow_100.zip
+	wget https://www.geo.uzh.ch/~gjouvet/dle-data/cfsflow_100.zip
 
 2) Unzip it:
 
