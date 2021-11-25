@@ -506,44 +506,6 @@ class dle:
 
         return DATAIN, DATAOUT
 
-    # def resample_data(self, DATA, k):
-
-    #     DATAUP = []
-
-    #     # upsample by averaging
-    #     if k > 1:
-    #         kk = int(k)
-    #         for mat in DATA:
-    #             t, m, n, o = mat.shape
-    #             ny = m // kk
-    #             nx = n // kk
-    #             DATAUP.append(
-    #                 np.nanmean(
-    #                     mat[:, : ny * kk, : nx * kk, :].reshape((t, ny, kk, nx, kk, o)),
-    #                     axis=(2, 4),
-    #                 )
-    #             )
-
-    #     # downsample by cubic interpolation
-    #     elif k < 1:
- 
-    #         for mat in DATA:
-    #             y = np.arange(mat.shape[1])
-    #             x = np.arange(mat.shape[2])
-    #             ynew = np.arange(int(mat.shape[1] / k)) * k
-    #             ynew = ynew[ynew <= max(y)]
-    #             xnew = np.arange(int(mat.shape[2] / k)) * k
-    #             xnew = xnew[xnew <= max(x)]
-    #             mato = np.zeros((mat.shape[0], len(ynew), len(xnew), mat.shape[3]))
-    #             for m in range(mat.shape[0]):
-    #                 for n in range(mat.shape[3]):
-    #                     mato[m, :, :, n] = interpolate.interp2d(
-    #                         x, y, mat[m, :, :, n], kind="cubic"
-    #                     )(xnew, ynew)
-    #             DATAUP.append(mato)
-
-    #     return DATAUP
-    
     def resample_data(self, DATA, k):
  
         # upsample by averaging
